@@ -116,6 +116,9 @@ li {
   padding: 20px;
 }
 
+.img {
+  text-align: center;
+}
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -129,6 +132,11 @@ input,
 textarea {
   margin: 5px;
   height: 45px;
+  border: 1px solid #e1004bee;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-family: "font-1";
 }
 
 #firstname {
@@ -141,8 +149,35 @@ textarea {
 
 textarea {
   grid-area: ta;
+  resize: none;
 }
 
 input[type="submit"] {
   grid-area: bt;
+  cursor: pointer;
+  background: #e1004bee;
+  transition: 0.4s;
+}
+
+input[type="submit"]:hover {
+  background: black;
+  color: #e1004bee;
+}
+
+/*******Responsive*******/
+@media screen and (max-width: 1000px) {
+  .grid-container {
+    display: block;
+  }
+}
+@media screen and (max-width: 780px) {
+  form {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "i1"
+      "i2"
+      "ta"
+      "bt";
+  }
 }
